@@ -6,6 +6,7 @@
 #include <ctime>
 #include <cmath>
 #include <stdexcept>
+#include <fstream>
 #include "Vec.h"
 
 double* construct_1d(size_t length);
@@ -22,6 +23,12 @@ public:
     */
     virtual void adjust_weights(double rate,double mometum,BPBase* last)=0;
     virtual double error(BPBase* next){ return 0.0; }
+    
+    /* dump weights into a .txt file.*/
+    virtual void dump(const char* filename){}
+    /* load weights from the .txt file.*/
+    virtual void load(const char* filename){}
+
     virtual ~BPBase(){}
 //protected:
     double* units;
@@ -52,6 +59,9 @@ public:
 
     void layerforward(BPBase* next);
     void adjust_weights(double rate,double momentum,BPBase* next);
+
+    void dump(const char* filename);
+    void load(const char* filename);
 //protected:
     size_t branches;        //the number of Neuros of the next layer.
     double** weights;
@@ -81,6 +91,10 @@ public:
     void layerforward(BPBase* next);
     void adjust_weights(double rate,double momentum,BPBase* next);
     double error(BPBase* next);
+
+    void dump(const char* filename);
+    void load(const char* filename);
+
 //protected:
     size_t branches;
     double** prev_weights;

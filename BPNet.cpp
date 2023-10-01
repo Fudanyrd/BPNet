@@ -1,6 +1,8 @@
 #include "BPNet.h"
 
 using std::domain_error;
+using std::endl;            using std::ifstream;
+using std::ofstream;
 
 double* construct_1d(size_t length){
     double* res = new double[length]{0.0};
@@ -172,4 +174,22 @@ void test(Vec<BPBase*>& layers,double* inputs) {
         layers[i]->layerforward(layers[i+1]);
     }
     /* done. */
+}
+
+void InputLayer::dump(const char* filename){
+    ofstream out(filename);
+    for(size_t r=0;r!=this->Neuros;++r){
+        for(size_t c=0;c!=this->branches;++c){
+            out << this->weights[r][c] << ' ';
+        }
+        out << endl;
+    }
+}
+void InputLayer::load(const char* filename){
+    ifstream in(filename);
+    for(size_t r=0;r!=this->Neuros;++r){
+        for(size_t c=0;c!=this->branches;++c){
+            in >> this->weights[r][c];
+        }
+    }
 }
