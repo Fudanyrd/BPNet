@@ -213,3 +213,14 @@ void HiddenLayer::load(const char* filename){
         }
     }
 }
+
+void construct_network(Vec<BPBase*>& layers,size_t nums,size_t* neuros){
+    layers.push_back(new InputLayer(neuros[0],neuros[1]));
+
+    /* the middle should all be HiddenLayer(s)*/
+    for(size_t i=1;i!=nums-1;++i){
+        layers.push_back(new HiddenLayer(neuros[i],neuros[i+1]));
+    }
+    /* the end should be an OutputLayer. */
+    layers.push_back(new OutputLayer(neuros[nums-1]));
+}

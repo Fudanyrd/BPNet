@@ -137,4 +137,12 @@ double train(Vec<BPBase*>& layers,double rate, double momentum,
 */
 void test(Vec<BPBase*>& layers, double* inputs);
 
+/*  THIS function is mainly for simplifying the construction of a net work.
+    construct a neuro network for training.
+    nums: number of layers
+    Neuros: the number of neuros of each layer
+    result is in layers.
+*/
+void construct_network(Vec<BPBase*>& layers,size_t nums, size_t *Neuros);
+
 #endif//BPNET_H
