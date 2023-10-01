@@ -6,6 +6,8 @@ A simple BP neural network which has a Input layer, hidden layer and output laye
 
 The main construction and some calculation rules.
 
+Plus fd_max.cpp telling you how to train a network which can choose the larger from two values.
+
 ## Future improvements:
 
 Use class to wrap the three kinds of layers, and finally put them in one class.
