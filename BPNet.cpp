@@ -1,8 +1,10 @@
 #include "BPNet.h"
+#include <iomanip>
 
 using std::domain_error;
 using std::endl;            using std::ifstream;
 using std::ofstream;
+using std::setiosflags;     using std::setprecision;
 
 double* construct_1d(size_t length){
     double* res = new double[length]{0.0};
@@ -178,17 +180,17 @@ void test(Vec<BPBase*>& layers,double* inputs) {
 
 void InputLayer::dump(const char* filename){
     ofstream out(filename);
-    for(size_t r=0;r!=this->Neuros;++r){
-        for(size_t c=0;c!=this->branches;++c){
-            out << this->weights[r][c] << ' ';
+    for(size_t r=0;r!=this->Neuros+1;++r){
+        for(size_t c=0;c!=this->branches+1;++c){
+            out <<setiosflags(std::ios::fixed) << setprecision(8) << this->weights[r][c] << ' ';
         }
         out << endl;
     }
 }
 void InputLayer::load(const char* filename){
     ifstream in(filename);
-    for(size_t r=0;r!=this->Neuros;++r){
-        for(size_t c=0;c!=this->branches;++c){
+    for(size_t r=0;r!=this->Neuros+1;++r){
+        for(size_t c=0;c!=this->branches+1;++c){
             in >> this->weights[r][c];
         }
     }
@@ -196,17 +198,17 @@ void InputLayer::load(const char* filename){
 
 void HiddenLayer::dump(const char* filename){
     ofstream out(filename);
-    for(size_t r=0;r!=this->Neuros;++r){
-        for(size_t c=0;c!=this->branches;++c){
-            out << this->weights[r][c] << ' ';
+    for(size_t r=0;r!=this->Neuros+1;++r){
+        for(size_t c=0;c!=this->branches+1;++c){
+            out <<setiosflags(std::ios::fixed) << setprecision(8) << this->weights[r][c] << ' ';
         }
         out << endl;
     }
 }
 void HiddenLayer::load(const char* filename){
     ifstream in(filename);
-    for(size_t r=0;r!=this->Neuros;++r){
-        for(size_t c=0;c!=this->branches;++c){
+    for(size_t r=0;r!=this->Neuros+1;++r){
+        for(size_t c=0;c!=this->branches+1;++c){
             in >> this->weights[r][c];
         }
     }
