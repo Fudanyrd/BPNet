@@ -82,7 +82,7 @@ void InputLayer::adjust_weights(double rate,double momentum,BPBase* next){
     this->units[0] = 1.0; 
     for(j=1;j<=next->Neuros;++j){
         for(k=0;k<=this->Neuros;++k){
-            new_dw = ((rate*next->delta[j]*this->units[k])+(momentum*this->weights[k][j]));
+            new_dw = ((rate*next->delta[j]*this->units[k])+(momentum*this->prev_weights[k][j]));
             this->weights[k][j] += new_dw;
             this->prev_weights[k][j] = new_dw;
         }
@@ -95,7 +95,7 @@ void HiddenLayer::adjust_weights(double rate,double momentum,BPBase* next){
     this->units[0] = 1.0; 
     for(j=1;j<=next->Neuros;++j){
         for(k=0;k<=this->Neuros;++k){
-            new_dw = ((rate*next->delta[j]*this->units[k])+(momentum*this->weights[k][j]));
+            new_dw = ((rate*next->delta[j]*this->units[k])+(momentum*this->prev_weights[k][j]));
             this->weights[k][j] += new_dw;
             this->prev_weights[k][j] = new_dw;
         }
