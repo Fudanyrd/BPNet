@@ -193,3 +193,21 @@ void InputLayer::load(const char* filename){
         }
     }
 }
+
+void HiddenLayer::dump(const char* filename){
+    ofstream out(filename);
+    for(size_t r=0;r!=this->Neuros;++r){
+        for(size_t c=0;c!=this->branches;++c){
+            out << this->weights[r][c] << ' ';
+        }
+        out << endl;
+    }
+}
+void HiddenLayer::load(const char* filename){
+    ifstream in(filename);
+    for(size_t r=0;r!=this->Neuros;++r){
+        for(size_t c=0;c!=this->branches;++c){
+            in >> this->weights[r][c];
+        }
+    }
+}
