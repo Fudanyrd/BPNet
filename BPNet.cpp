@@ -76,8 +76,8 @@ void InputLayer::adjust_weights(double rate,double momentum,BPBase* next){
     size_t j, k;
 
     this->units[0] = 1.0; 
-    for(j=1;j<=this->Neuros;++j){
-        for(k=0;k<=next->Neuros;++k){
+    for(j=1;j<=next->Neuros;++j){
+        for(k=0;k<=this->Neuros;++k){
             new_dw = ((rate*next->delta[j]*this->units[k])+(momentum*this->weights[k][j]));
             this->weights[k][j] += new_dw;
             this->prev_weights[k][j] = new_dw;
@@ -151,9 +151,25 @@ double train(Vec<BPBase*>& layers,double rate, double momentum,
         layers[i]->error(layers[i+1]);
     }
     /*adjust weights of each layer*/
-    for(size_t i=0;i!=sz-1;++i){
+    for(size_t i=sz-2;i!=0;--i){
         layers[i]->adjust_weights(rate,momentum, layers[i+1]);
     }
+    layers[0]->adjust_weights(rate, momentum, layers[1]);
 
     return res;
+}
+
+/* now that you have trained the network, you may want to test it using a given input.
+*/
+void test(Vec<BPBase*>& layers,double* inputs) {
+    static size_t sz = layers.size();
+    /* put input data into InputLayer::units. */
+    for(size_t i=1;i<=layers[0]->Neuros;++i){
+        layers[0]->units[i] = inputs[i-1];
+    }
+    /* input activation */
+    for(size_t i = 0;i!=sz-1;++i){
+        layers[i]->layerforward(layers[i+1]);
+    }
+    /* done. */
 }

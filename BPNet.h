@@ -117,5 +117,10 @@ protected:
 */
 double train(Vec<BPBase*>& layers,double rate, double momentum,
     double* inputs, double* targets);
+/*
+    use trained network to get some output.
+    result is in the OutputLayer, go and see yourself.
+*/
+void test(Vec<BPBase*>& layers, double* inputs);
 
 #endif//BPNET_H
