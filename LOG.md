@@ -232,19 +232,17 @@ Well, a hard nut to crack. But you probably won't forgot the iteration algorithm
 
 How you did that? It may look like this:
 
-long Fib(int n){
+```
 
-    long x = 1, y = 1;
-
-    for(int i=0;i!=n;++i){
-
-        x, y = y, x + y; //of course you cannot do this in C\C++.
-
+    long Fib(int n){
+        long x = 1, y = 1;
+        for(int i=0;i!=n;++i){
+            x, y = y, x + y; //of course you cannot do this in C\C++.
+        }
+        return x;
     }
 
-    return x;
-
-}
+```
 
 The great idea here is that you can **store the value of key variables** and continue the iteration. Now look back at Ackerman's puzzle.
 
