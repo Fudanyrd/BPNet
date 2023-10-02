@@ -102,7 +102,7 @@ simultaneously make it easier for my network crawler to process. That's exactly 
 
 ### My Favorite Quotes
 
-+---------------------------------------------+-----------------------+
+\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+
 
 |*There are two kinds of beauty in the world* |  *世界上的美有两种*     |
 
@@ -112,7 +112,7 @@ simultaneously make it easier for my network crawler to process. That's exactly 
 
 |*Upon locating a bug*                        |  *会心灿烂的笑容*       |
 
-+---------------------------------------------+------------------------+
+\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+
 
 ## On What Tools to Use
 
@@ -144,7 +144,7 @@ That is perhaps the **price** you need to pay for a faster and more fluent workf
 
 \[1\]: If you use IDEs\(Integrated Development Environment\) such as Visual Studio, you don't have to write your own CMakeLists.txt, because IDE can do this for you.
 
-+---------------------------------------------+-----------------------+
+\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+
 
 |*There are two kinds of beauty in the world* |  *世界上的美有两种*     |
 
@@ -154,7 +154,7 @@ That is perhaps the **price** you need to pay for a faster and more fluent workf
 
 |*Upon locating a bug*                        |  *会心灿烂的笑容*       |
 
-+---------------------------------------------+------------------------+
+\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\
 
 ## On How Many Programming Languages You should Master
 
@@ -190,7 +190,7 @@ I have gradually realized that after all, languages are tools. All you need to d
 
 \[1\]: It is translated from one of my favorite C++ tutorial--*Ruminations on C++*.
 
-+---------------------------------------------+-----------------------+
+\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+
 
 |*There are two kinds of beauty in the world* |  *世界上的美有两种*     |
 
@@ -200,7 +200,7 @@ I have gradually realized that after all, languages are tools. All you need to d
 
 |*Upon locating a bug*                        |  *会心灿烂的笑容*       |
 
-+---------------------------------------------+------------------------+
+\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\
 
 ## Recursive? Non-recursive with Stack? Non-recursive without Stack?
 
@@ -260,7 +260,7 @@ And the fourth row: {5,11,...} and so on.
 
 I should concede this is only a theretical algorithm because doing so requires much memory. Done.
 
-+---------------------------------------------+-----------------------+
+\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+
 
 |*There are two kinds of beauty in the world* |  *世界上的美有两种*     |
 
@@ -270,4 +270,4 @@ I should concede this is only a theretical algorithm because doing so requires m
 
 |*Upon locating a bug*                        |  *会心灿烂的笑容*       |
 
-+---------------------------------------------+------------------------+
+\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\
