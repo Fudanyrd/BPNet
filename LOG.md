@@ -78,8 +78,11 @@ However, it was not long before I ran into trouble--the first thing a network cr
 ### My Favorite Quotes
 
 > *There are two kinds of beauty in the world*
+
 > *One is the concise but profound algorithms*
+
 > *The other is your broad sincere smile*
+
 > *Upon locating a bug* 
 
 
@@ -102,8 +105,11 @@ deleted useful codes!? ". Else I would annotate blockes of my codes when debuggi
 \[1\]: If you use IDEs\(Integrated Development Environment\) such as Visual Studio, you don't have to write your own CMakeLists.txt, because IDE can do this for you.
 
 > *There are two kinds of beauty in the world*
+
 > *One is the concise but profound algorithms*
+
 > *The other is your broad sincere smile*
+
 > *Upon locating a bug* 
 
 
@@ -124,15 +130,21 @@ I have gradually realized that after all, languages are tools. All you need to d
 *Below is my feelings of some programming languages*
 
 >C\C++: fast, easy to extend
+
 >Python: easy to get started, newcomer-friendly.
+
 >Java: similar to C\C++, but has an advantage of thread control and net programming.
+
 >MATLAB: a numeric calculation oriented programming language, widely used in machine learning and deep learning\(perhaps it can also help you a little bit to do your linear algebra homework!!\)
 
 \[1\]: It is translated from one of my favorite C++ tutorial--*Ruminations on C++*.
 
 > *There are two kinds of beauty in the world*
+
 > *One is the concise but profound algorithms*
+
 > *The other is your broad sincere smile*
+
 > *Upon locating a bug* 
 
 
@@ -216,6 +228,9 @@ long ack(unsigned int m,unsigned int n){
 I should concede this is only a theretical algorithm because doing so requires much memory. Done.
 
 > *There are two kinds of beauty in the world*
+
 > *One is the concise but profound algorithms*
+
 > *The other is your broad sincere smile*
+
 > *Upon locating a bug* 
