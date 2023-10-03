@@ -102,17 +102,14 @@ simultaneously make it easier for my network crawler to process. That's exactly 
 
 ### My Favorite Quotes
 
-\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+
+> *There are two kinds of beauty in the world*
 
-|*There are two kinds of beauty in the world* |  *世界上的美有两种*     |
+> *One is the concise but profound algorithms*
 
-|*One is the concise but profound algorithms* | *一种是简洁又深刻的算法* |
+> *The other is your broad sincere smile*
 
-|*The other is your broad sincere smile*      |  *一种是你找到bug时*    |
+> *Upon locating a bug* 
 
-|*Upon locating a bug*                        |  *会心灿烂的笑容*       |
-
-\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+
 
 ## On What Tools to Use
 
@@ -144,17 +141,14 @@ That is perhaps the **price** you need to pay for a faster and more fluent workf
 
 \[1\]: If you use IDEs\(Integrated Development Environment\) such as Visual Studio, you don't have to write your own CMakeLists.txt, because IDE can do this for you.
 
-\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+
+> *There are two kinds of beauty in the world*
 
-|*There are two kinds of beauty in the world* |  *世界上的美有两种*     |
+> *One is the concise but profound algorithms*
 
-|*One is the concise but profound algorithms* | *一种是简洁又深刻的算法* |
+> *The other is your broad sincere smile*
 
-|*The other is your broad sincere smile*      |  *一种是你找到bug时*    |
+> *Upon locating a bug* 
 
-|*Upon locating a bug*                        |  *会心灿烂的笑容*       |
-
-\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\
 
 ## On How Many Programming Languages You should Master
 
@@ -190,17 +184,14 @@ I have gradually realized that after all, languages are tools. All you need to d
 
 \[1\]: It is translated from one of my favorite C++ tutorial--*Ruminations on C++*.
 
-\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+
+> *There are two kinds of beauty in the world*
 
-|*There are two kinds of beauty in the world* |  *世界上的美有两种*     |
+> *One is the concise but profound algorithms*
 
-|*One is the concise but profound algorithms* | *一种是简洁又深刻的算法* |
+> *The other is your broad sincere smile*
 
-|*The other is your broad sincere smile*      |  *一种是你找到bug时*    |
+> *Upon locating a bug* 
 
-|*Upon locating a bug*                        |  *会心灿烂的笑容*       |
-
-\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\
 
 ## Recursive? Non-recursive with Stack? Non-recursive without Stack?
 
@@ -258,16 +249,38 @@ And the third row: {3,5,7,9, ...}
 
 And the fourth row: {5,11,...} and so on.
 
+Here is a piece of code to do this:
+
+```
+
+long ack(unsigned int m,unsigned int n){
+	long* dat = new long[4096], *aux=new long[4096];
+	unsigned int i = 0, c=4096;
+	/* calculate the first row. */
+	for(int i=0;i!=4096;++i){
+		aux[i] = i+1;
+	}
+	/* calculate until reach the last row. */
+	for(unsigned int row=0;row!=m;++row){
+		i = 0;
+		for(unsigned int col = 1;col < 4096;){
+			dat[i] = aux[col];
+			col = dat[i];
+			++i;
+		} /* swap the two array: dat and aux.*/
+		long* temp = dat; dat = aux; aux = temp;
+	}
+	return aux[n];
+}
+
+```
+
 I should concede this is only a theretical algorithm because doing so requires much memory. Done.
 
-\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+
+> *There are two kinds of beauty in the world*
 
-|*There are two kinds of beauty in the world* |  *世界上的美有两种*     |
+> *One is the concise but profound algorithms*
 
-|*One is the concise but profound algorithms* | *一种是简洁又深刻的算法* |
+> *The other is your broad sincere smile*
 
-|*The other is your broad sincere smile*      |  *一种是你找到bug时*    |
-
-|*Upon locating a bug*                        |  *会心灿烂的笑容*       |
-
-\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\
+> *Upon locating a bug* 
