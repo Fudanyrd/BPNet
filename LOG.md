@@ -77,6 +77,8 @@ However, it was not long before I ran into trouble--the first thing a network cr
 
 ### My Favorite Quotes
 
+>\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
 > *There are two kinds of beauty in the world*
 
 > *One is the concise but profound algorithms*
@@ -85,7 +87,7 @@ However, it was not long before I ran into trouble--the first thing a network cr
 
 > *Upon locating a bug* 
 
-
+>\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
 
 ## On What Tools to Use
 
@@ -104,6 +106,8 @@ deleted useful codes!? ". Else I would annotate blockes of my codes when debuggi
 
 \[1\]: If you use IDEs\(Integrated Development Environment\) such as Visual Studio, you don't have to write your own CMakeLists.txt, because IDE can do this for you.
 
+>\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
 > *There are two kinds of beauty in the world*
 
 > *One is the concise but profound algorithms*
@@ -112,6 +116,7 @@ deleted useful codes!? ". Else I would annotate blockes of my codes when debuggi
 
 > *Upon locating a bug* 
 
+>\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
 
 ## On How Many Programming Languages You should Master
 
@@ -139,6 +144,8 @@ I have gradually realized that after all, languages are tools. All you need to d
 
 \[1\]: It is translated from one of my favorite C++ tutorial--*Ruminations on C++*.
 
+>\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
 > *There are two kinds of beauty in the world*
 
 > *One is the concise but profound algorithms*
@@ -147,8 +154,15 @@ I have gradually realized that after all, languages are tools. All you need to d
 
 > *Upon locating a bug* 
 
+>\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
 
 ## Recursive? Non-recursive with Stack? Non-recursive without Stack?
+
+\-\-\-
+
+*From Now on, try to solve a problem in more than one ways.*
+
+\-\-\-
 
 Recently I met an interesting question: design an recursive | non-recursive using stack | non-recursive without stack to solve Ackerman function.
 
@@ -227,6 +241,8 @@ long ack(unsigned int m,unsigned int n){
 ```
 I should concede this is only a theretical algorithm because doing so requires much memory. Done.
 
+>\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
 > *There are two kinds of beauty in the world*
 
 > *One is the concise but profound algorithms*
@@ -234,3 +250,5 @@ I should concede this is only a theretical algorithm because doing so requires m
 > *The other is your broad sincere smile*
 
 > *Upon locating a bug* 
+
+>\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
