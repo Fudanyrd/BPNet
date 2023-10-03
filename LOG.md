@@ -254,3 +254,45 @@ I should concede this is only a theretical algorithm because doing so requires m
 > *Upon locating a bug* 
 
 >\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+## Misused Pointers can be Highly Problematic
+
+When I was working on part of my [cpp datastructure repository](http://github.com/Fudanyrd/cpp_core), I experieced countless bugs caused by pointer. Most of them are because of using destroyed or worse, null pointers.
+
+Here is [an example](https://github.com/Fudanyrd/cpp_core/blob/main/BSTree.h) of this:
+```
+template <typename _T>
+void BSTree<_T>::remove(const _T& value){
+	if(this->find(value) == 0) return;
+	BSNode<_T>* p=Root, *pr=0, *ppr=0, *q;
+	Stack<BSNode<_T>*> path;
+	int d, dd = 0;
+
+	while(!path.empty()){
+		//skip, not important for this topic.
+		//you can find this code blocks from line 269-363.
+	}
+	Root = pr;
+	delete p;
+	return;
+}
+
+```
+If you frequently deal with C pointers, you are likely to notice some risk factors: 
+`BSNode<_T>* p=Root, *pr=0, *ppr=0,*q; ` and `delete p;`. They indeed caused some troubles when I tried to add a remove method for my BSTree class\(Binary Sorted tree, actually AVL tree\). pr and ppr are initialized null; q is **NOT** initialized at all! But I shouldn't allocate memory for them because they are simply auxiliary. Since I paid special attention to those uninitialized pointers, So far, so good.
+
+But bug soon came to me as soon as the programme broke from the `while` loop. I spent hours found the bug. The problem was really interesting\(annoying\)and hard to find. While debugging, I focused mainly on the `while` loop, it seemed to be functioning normally. When the function call was over and programme returned to the main function, I soon received a bug report saying that p was a useless pointer, all of its members were invalid! **I deleted the `delete` statement**, It worked nice. Then I realized that the `delete` statement will call the destructor, i.e. I let the destructor to recursively delete all its children nodes!! That's why I met useless pointer reference. 
+
+Luckily the bug was easy to fix. when removed from the tree, I let the node's both children pointer to be all zero so that the destructor won't screw all these up. And you can see the correct remove method on github now.
+
+>\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+> *There are two kinds of beauty in the world*
+
+> *One is the concise but profound algorithms*
+
+> *The other is your broad sincere smile*
+
+> *Upon locating a bug* 
+
+>\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
