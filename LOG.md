@@ -38,7 +38,9 @@ one **starting from scratch without any dependencies**. And I made [it](http://g
 
 Consider there are 3 kinds of Layers in neuro networks:
 >**Input Layer**: for drawing input data and pass them down
+
 >**Hidden Layer**: for processing data it receives and pass them down
+
 >**Output Layer**: where you can find the output 
 Undoubtedly there should be a base class\(I named it BPBase\) which should have at least adjust_weights(), layerforward() methods. 
 
