@@ -257,6 +257,8 @@ I should concede this is only a theretical algorithm because doing so requires m
 
 ## Misused Pointers can be Highly Problematic
 
+*When using new and delete statements, be clear about what constructor and destructor might do!*
+
 When I was working on part of my [cpp datastructure repository](http://github.com/Fudanyrd/cpp_core), I experieced countless bugs caused by pointer. Most of them are because of using destroyed or worse, null pointers.
 
 Here is [an example](https://github.com/Fudanyrd/cpp_core/blob/main/BSTree.h) of this:

@@ -1,4 +1,4 @@
-#include "BPNet.h"
+#include <BPNet.h>
 #include "random_creater.h"
 
 using std::cout;                using std::cin;

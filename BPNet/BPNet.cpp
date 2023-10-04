@@ -1,4 +1,4 @@
-#include "BPNet.h"
+#include <BPNet.h>
 #include <iomanip>
 
 using std::domain_error;
