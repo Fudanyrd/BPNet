@@ -77,6 +77,86 @@ the summer courses and learnt basic knowledges in Python I started to build my o
 
 However, it was not long before I ran into trouble--the first thing a network crawler do is to download seas of information into your own computer and  then process them and extract those you want. So, I had to deal with the problem--how to store and organize large amounts of information without eating up memory simultaneously make it easier for my network crawler to process. That's exactly what DataBase system can do for me.
 
+Recently I learnt little basic SQL\(Standard Query Language\) and built a mini database named "xk"\(course select system in English\). To see if it contains any tables, type the following command into MySQL Command Line Client:
+```
+ show tables;
+```
+
+and then use the following command to see what's in each table;
+```
+select * from courses; select * from grades; select * from students;
+```
+
+and the output look like this\(I made up these data for practice\):
+```
++------+---------------+-----------+--------------+
+| num  | name          | classroom | teacher      |
++------+---------------+-----------+--------------+
+|    1 | Discrete math | 3208      | ZhuHong      |
+|    2 | Programming   | 2305      | XiaKuanli    |
+|    3 | Discrete math | 3206      | WuYonghui    |
+|    4 | Programming   | 2103      | ZhouYonggeng |
+|    5 | DBS           | 3206      | Wangwei      |
++------+---------------+-----------+--------------+
+5 rows in set (0.00 sec)
+
++--------+-----------+-------+
+| id     | course_id | grade |
++--------+-----------+-------+
+| 920001 |         1 | A     |
+| 920001 |         2 | B     |
+| 920002 |         1 | B     |
+| 920002 |         2 | B     |
+| 920002 |         3 | C     |
+| 920003 |         2 | B     |
+| 920003 |         3 | A     |
+| 920004 |         1 | B     |
+| 920004 |         2 | A     |
+| 920004 |         3 | B     |
+| 920005 |         2 | C     |
+| 920005 |         3 | C     |
+| 920006 |         1 | A     |
+| 920006 |         3 | B     |
++--------+-----------+-------+
+14 rows in set (0.00 sec)
+
++--------+----------+------+------+
+| id     | name     | sex  | age  |
++--------+----------+------+------+
+| 920001 | LiYang   | M    |   19 |
+| 920002 | CuiAo    | M    |   20 |
+| 920003 | Wangjing | F    |   18 |
+| 920004 | ShenZhen | M    |   17 |
+| 920005 | XuTing   | F    |   19 |
+| 920006 | SuZhan   | M    |   20 |
++--------+----------+------+------+
+6 rows in set (0.00 sec)
+```
+
+Now I know the table courses contains num\(course id number\), classroom and teacher; table grades contain id\(student id\), course_id, grade\(the student gets\); table students contains id, name, sex, age.  Since I'm interested in which teacher gives the most **A**s, how can I do it?
+
+Obviously, I can first find the id of the course whose students got most **A**s and then find the teacher, the following is how I did this:
+```
+select course_id from grades where grade="A" group by course_id having count(*)>=all(select count(*) from grades where grade="A" group by course_id);
+```
+this command enabled me to know that it was the course with id number 1 that gave its students most **A**s, and I could find its teacher:
+```
+select teacher from courses where num=1;
+```
+now I know the teacher who taught the course was *Zhu Hong*\(made-up\), how nice!
+
+The most interesting here is that you can complete this by one command instead of two, like this:
+```
+select teacher from courses where num=any(select course_id from grades where grade="A" group by course_id having count(*)>=all(select count(*) from grades where grade="A" group by course_id));
+```
+
+Then, who may be my competitors for these **A**s? I should try my best to avoid taking the same course as them. Here's my task: *find out who got an A in the course that gave the most As*. Let's see how to do this.
+```
+select name,id from students where id=any(select id from grades where (course_id=any(select course_id from grades where grade="A" group by course_id having count(*)>=all(select count(*) from grades where grade="A" group by course_id)) and grade="A"));
+```
+
+As the problem become complex, my query command become complex as well. e.g. the command above is quite intimidating. Hopefully there will be easier way of doing so.
+
 ### My Favorite Quotes
 
 >\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
@@ -92,8 +172,6 @@ However, it was not long before I ran into trouble--the first thing a network cr
 >\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
 
 ## On What Tools to Use
-
-In this part I will tell one stories of my own. Hopefully you'll like it\(If you're also a CS student, you are likely to be familiar with it, though\).
 
 One day I was working on a middle-scale program but it couldn't run upon \"completion\". Of course the next thing I had to do was to read through all the 
 `for` loop in case I left out something. At the beginning I was doing carefully but soon I lost patience because of those poorly-organized\[0\] code blocks. Thank God! I eventually *located* a imagined bug. As usual I annotated this code block and rewrited it. I thought God was playing a joke on me because again it failed on OJ. Worse still, I deleted all the annotation when submitting my work to OJ\(which means that I lost my previos version forever\)!! I didn't solve the problem at last. I never deleted any lines of annotation since then.
